@@ -1,0 +1,13 @@
+version: "3"
+services:
+    scala_sandbox:
+        build:
+            context: ./envs
+            dockerfile: Dockerfile
+        image: scala_sandbox:1.0
+        init: true
+        container_name: scala_sandbox
+        volumes: 
+            - "./sandbox:/home/sandbox"
+        privileged: true
+        working_dir: /home/sandbox
